@@ -1,0 +1,48 @@
+.Product-Card{
+    display: flex;
+    justify-content: space-between;
+    width: 85%;
+    margin: 0 auto;
+    img{
+        transform: scale(.83);
+        margin:auto;
+    }
+    .Content{
+        margin-top: 3.5%;
+        width: 150%;
+        h1{
+            font-size: 4.5rem;
+        }
+        h3{
+            display: inline-block;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        p{
+            font-size: 2rem;
+            line-height: 1.83;
+            margin-top: 2%;
+        }
+        .button-container{
+            display: flex;
+            flex-direction: row-reverse;
+            button{
+                margin: 2%;
+                font-size: 1.7rem;
+                height: 6vh;
+                width: 12vw;
+                border-radius: 5px;
+                font-weight: bold;
+            }
+            .add-button{
+                color: white;
+                background-color: rgb(0, 120, 100);
+            }
+            .rev-button{
+                color: rgb(0, 120, 100);
+                background-color: white;
+                border: 1px solid rgb(0, 120, 100);
+            }
+        }
+    }
+}

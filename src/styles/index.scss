@@ -1,4 +1,5 @@
 @import 'reset';
+@import '../App.scss';
 // Vars and Mixins
 // @import 'variables';
 // @import 'global';
@@ -6,7 +7,7 @@
 
 
 // Components Here
-@import '../components/global/NavBar/NavBar.scss'
-
+@import '../components/global/NavBar/NavBar.scss';
+@import '../components/ProductPage/ProductCard.scss';
 // Pages Here to handle edge and special case component styling overwrites
 
