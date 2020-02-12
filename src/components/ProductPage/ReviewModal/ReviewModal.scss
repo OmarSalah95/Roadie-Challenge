@@ -17,4 +17,8 @@
     position: absolute;
     top: 25%;
     left:30%;
+    .review-form{
+        display: flex;
+        flex-direction: column;
+    }
 }
