@@ -1,0 +1,13 @@
+// This will be custom styling if needed but it will mainly be used to import the sub-compnents stylings f
+// or ease of import into base styles file.
+
+@import './StarRatings/StarRatings.scss';
+h2{
+    margin-left: 1%;
+    font-size: 5rem;
+}
+.Review-Section{
+    display: flex;
+    justify-content: space-between;
+
+}

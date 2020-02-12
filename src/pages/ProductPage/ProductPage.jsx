@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react'
 import ProductCard from '../../components/ProductPage/ProductCard'
-
+import ReviewSection from '../../components/ProductPage/ReviewSection/ReviewSection'
 
 export default function ProductPage() {
-    const [state, setState] = useState({})
+    const [state, setState] = useState({reviews:[]})
 
     // Use Effect will simulate my Server request to recieve the needed data and set it to state
     useEffect(() =>{
         const date = new Date()
         let formatted = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
-        setTimeout(setState(
+        setState(
             {
             title: "ROADIE COMMUNICATOR - INCLUDES INSTALLATION SOFTWARE",
             seller: "Roadie", 
@@ -43,7 +43,7 @@ export default function ProductPage() {
                 }
             ]
             } 
-    ), 5000)
+    )
     }, [])
 
 
@@ -52,6 +52,7 @@ export default function ProductPage() {
     return (
         <>
             <ProductCard title={state.title} seller={state.seller} desc={state.desc} img={state.img} />
+            <ReviewSection revArr={state.reviews} />
         </>
     );
 }
