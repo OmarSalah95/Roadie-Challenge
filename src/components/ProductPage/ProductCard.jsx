@@ -1,10 +1,10 @@
 import React from 'react'
 
-export default function ProductCard({title, seller, desc, img}){
+export default function ProductCard({title, seller, desc, productImg, addReview}){
     return (
         <div className="Product-Card">
             
-                <img src={img} alt="Product Display Image"/>
+            <img src={productImg} alt="Product Display"/>
             
 
             <div className="Content">
@@ -13,7 +13,7 @@ export default function ProductCard({title, seller, desc, img}){
                 <p>{desc}</p>
                 <div className="button-container">
                     <button className="add-button">ADD TO CART</button>
-                    <button className="rev-button">LEAVE REVIEW</button>
+                    <button className="rev-button" onClick={() => addReview() }>LEAVE REVIEW</button>
                 </div>
             </div>
         </div>

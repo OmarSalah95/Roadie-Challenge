@@ -22,7 +22,7 @@ export default function StarRating({revArr}){
                 <div className="rating-bar">
                     <span className="filter-link">{five-i} Star</span>
                     <div className="percentage-box">
-                        <div className="percentage-fill" style={{width: getOccurancePercentage(five-i)+"%", height:"99%"}}></div>
+                        <div className="percentage-fill" style={{width: getOccurancePercentage(five-i)+"%", height:"99%", margin: 'auto 0'}}></div>
                     </div>
                 </div>
                 )
