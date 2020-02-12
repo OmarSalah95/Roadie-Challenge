@@ -27,7 +27,7 @@ export default function ProductPage() {
                     poster:  "Wade Williams",
                     rating: 5,
                     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    created_at: Date.now,
+                    created_at: formatted,
                 },{
                     subject: "Awe-",
                     poster:  "Megan Brewster",

@@ -1,0 +1,23 @@
+.review-card{
+    width:46%;
+    height: 425px;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 15px;
+    margin-top:25px;
+    .summary{
+        display: flex;
+        justify-content: space-around;
+        h3{
+            font-size: 3rem;
+            margin: 25px auto 15px;
+        }
+        .poster-data{
+            margin-bottom: 15px;
+        }
+    }
+    p{
+        font-size: 1.8rem;
+    }
+   
+}

@@ -1,7 +1,8 @@
 // This will be custom styling if needed but it will mainly be used to import the sub-compnents stylings f
 // or ease of import into base styles file.
 
-@import './StarRatings/StarRatings.scss';
+@import './StarRatingSection/StarRatings.scss';
+@import './ReviewCard/ReviewCard.scss';
 h2{
     margin-left: 1%;
     font-size: 5rem;
@@ -9,5 +10,11 @@ h2{
 .Review-Section{
     display: flex;
     justify-content: space-between;
+    .review-list-container{
+        width: 65%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
 
 }
