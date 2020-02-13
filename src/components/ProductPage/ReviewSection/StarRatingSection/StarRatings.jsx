@@ -1,7 +1,7 @@
 import React from 'react';
 import RatingBadge from '../../../global/RatingBadge/RatingBadge';
 
-export default function StarRating({revArr}){
+export default function StarRating({revArr, filterReviews}){
     let total = 0
     if (revArr.length){
         total = revArr.reduce((total, {rating})=> rating + total, 0)
@@ -15,12 +15,12 @@ export default function StarRating({revArr}){
         
     return(
         <div className="star-ratings">
-            <p><RatingBadge rating={avgRating} /> {avgRating} out of 5</p>
+            <p className="avg-indicator"><RatingBadge rating={avgRating} /> {avgRating} out of 5</p>
             <p >{revArr.length} Reviews</p>
             {Array(5).fill(5).map((five, i)=>{
                 return(
-                <div className="rating-bar">
-                    <span className="filter-link">{five-i} Star</span>
+                <div className="rating-bar" >
+                    <span className="filter-link" onClick={()=>{filterReviews(parseInt(five-i))}}>{five-i} Star</span>
                     <div className="percentage-box">
                         <div className="percentage-fill" style={{width: getOccurancePercentage(five-i)+"%", height:"99%", margin: 'auto 0'}}></div>
                     </div>

@@ -4,11 +4,14 @@ import ReviewSection from '../../components/ProductPage/ReviewSection/ReviewSect
 import ReviewModal from '../../components/ProductPage/ReviewModal/ReviewModal'
 
 export default function ProductPage() {
-    const [state, setState] = useState({reviews:[], modal_active: false})
+    const [state, setState] = useState({reviews:[], modal_active: false, filteredReviews:[]})
 
-    // Use Effect will simulate my Server request to recieve the needed data and set it to state
-    const date = new Date()
-    let formatted = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    // Use Effect will simulate my Server request to recieve the needed data and set it to sta
+    const getFormattedDate=()=>{
+        const date = new Date()
+        return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+    }
+
     useEffect(() =>{
         setState(
             {
@@ -23,38 +26,41 @@ export default function ProductPage() {
                     poster:  "Kayla Duperreault",
                     rating: 5,
                     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    created_at: formatted,
+                    created_at: getFormattedDate(),
                 },{
                     subject: "IS",
                     poster:  "Wade Williams",
                     rating: 5,
                     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    created_at: formatted,
+                    created_at: getFormattedDate(),
                 },{
                     subject: "Awe-",
                     poster:  "Megan Brewster",
                     rating: 4,
                     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    created_at: formatted,
+                    created_at: getFormattedDate(),
                 },{
                     subject: "Some",
                     poster: "Reid Workman" ,
                     rating: 4,
                     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                    created_at: formatted,
+                    created_at: getFormattedDate(),
                 }
             ]
             } 
     )
     }, [])
-    console.log(state.modal_active)
+    
 
-const toggleModal = () => setState({...state, modal_active: !state.modal_active})
-const submitReview = (event,newReview) => {
-    event.preventDefault()
-    setState({...state, reviews:[{...newReview,rating:parseInt(newReview.rating), created_at: formatted}, ...state.reviews], modal_active: false})
-    }
+    const toggleModal = () => setState({...state, modal_active: !state.modal_active})
 
+    const submitReview = (event,newReview) => {
+        event.preventDefault()
+        setState({...state, reviews:[{...newReview,rating:parseInt(newReview.rating), created_at: getFormattedDate()}, ...state.reviews], modal_active: false})
+        }
+
+    const filterReviewsForRating = (filter) => setState({...state, filteredReviews:[...state.reviews.filter(({rating}) => filter===rating)]})
+        console.log("filtered: ", state.filteredReviews)
 console.log(state)
     return (
         <>
@@ -63,7 +69,7 @@ console.log(state)
                 : null
             }
             <ProductCard title={state.title} seller={state.seller} desc={state.desc} productImg={state.img} addReview={toggleModal}/>
-            <ReviewSection revArr={state.reviews} />
+            <ReviewSection revArr={state.reviews} filteredReviews={state.filteredReviews} filterReviews={filterReviewsForRating}/>
         </>
     );
 }
