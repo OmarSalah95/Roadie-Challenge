@@ -7,9 +7,9 @@ export default function ProductPage() {
     const [state, setState] = useState({reviews:[], modal_active: false})
 
     // Use Effect will simulate my Server request to recieve the needed data and set it to state
+    const date = new Date()
+    let formatted = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
     useEffect(() =>{
-        const date = new Date()
-        let formatted = `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
         setState(
             {
             ...state,
@@ -50,8 +50,12 @@ export default function ProductPage() {
     console.log(state.modal_active)
 
 const toggleModal = () => setState({...state, modal_active: !state.modal_active})
-const submitReview = (newReview) => setState({...state, reviews:[newReview, ...state.reviews]})
+const submitReview = (event,newReview) => {
+    event.preventDefault()
+    setState({...state, reviews:[{...newReview,rating:parseInt(newReview.rating), created_at: formatted}, ...state.reviews], modal_active: false})
+    }
 
+console.log(state)
     return (
         <>
             {state.modal_active
