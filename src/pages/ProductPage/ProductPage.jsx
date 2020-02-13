@@ -4,8 +4,8 @@ import ReviewSection from '../../components/ProductPage/ReviewSection/ReviewSect
 import ReviewModal from '../../components/ProductPage/ReviewModal/ReviewModal'
 
 export default function ProductPage() {
-    const [state, setState] = useState({reviews:[], modal_active: false, filteredReviews:[], loading:false})
-
+    const [state, setState] = useState({reviews:[], modal_active: false, filteredReviews:[]})
+    const loading=false
     // Use Effect will simulate my Server request to recieve the needed data and set it to sta
     const getFormattedDate=()=>{
         const date = new Date()
@@ -49,7 +49,7 @@ export default function ProductPage() {
             ]
             } 
     )
-    }, [])
+    }, [loading])
     
 
     const toggleModal = () => setState({...state, modal_active: !state.modal_active})
