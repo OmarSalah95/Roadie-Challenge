@@ -15,14 +15,14 @@ export default function StarRating({revArr, filterReviews}){
         
     return(
         <div className="star-ratings">
-            <p className="avg-indicator"><RatingBadge rating={avgRating} /> {avgRating} out of 5</p>
+            <p className="avg-indicator" onClick={()=>{filterReviews(parseInt(999999))}}><RatingBadge rating={avgRating} /> {avgRating} out of 5</p>
             <p onClick={()=>{filterReviews(parseInt(999999))}}>{revArr.length} Reviews</p>
             {Array(5).fill(5).map((five, i)=>{
                 return(
                 <div className="rating-bar" >
                     <span className="filter-link" onClick={()=>{filterReviews(parseInt(five-i))}}>{five-i} Star</span>
                     <div className="percentage-box">
-                        <div className="percentage-fill" style={{width: getOccurancePercentage(five-i)+"%", height:"99%", margin: 'auto 0'}}></div>
+                        <div className="percentage-fill" style={{width: getOccurancePercentage(five-i)+"%", height:"100%", margin: 'auto 0'}}></div>
                     </div>
                 </div>
                 )
