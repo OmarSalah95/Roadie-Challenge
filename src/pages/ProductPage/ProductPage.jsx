@@ -9,7 +9,7 @@ export default function ProductPage() {
     // Use Effect will simulate my Server request to recieve the needed data and set it to sta
     const getFormattedDate=()=>{
         const date = new Date()
-        return `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
+        return `${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`
     }
 
     useEffect(() =>{
