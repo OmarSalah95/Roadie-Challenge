@@ -87,18 +87,16 @@ mark,
 audio,
 video {
 	box-sizing: border-box;
-
-
 	margin: 0;
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 	line-height: 120%;
 }
 body {
 	margin: 0 auto;
+	font-family: Arial;
 }
 /* HTML5 display-role reset for older browsers */
 article,
