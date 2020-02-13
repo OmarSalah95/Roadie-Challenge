@@ -12,7 +12,6 @@ export default function ReviewModal({submit, exit}){
 
     const handleInput = (event) => updateReview({...newReview, [event.target.name]: event.target.value})
 
-    console.log(newReview)
     return(
         <>
         <div className="filter-layer">

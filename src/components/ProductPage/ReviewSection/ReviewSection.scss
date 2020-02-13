@@ -6,10 +6,12 @@
 h2{
     margin-left: 1%;
     font-size: 5rem;
+    user-select: none;
 }
 .Review-Section{
     display: flex;
     justify-content: space-between;
+    user-select: none;
     .review-list-container{
         width: 65%;
         display: flex;

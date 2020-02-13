@@ -4,7 +4,7 @@ import ReviewSection from '../../components/ProductPage/ReviewSection/ReviewSect
 import ReviewModal from '../../components/ProductPage/ReviewModal/ReviewModal'
 
 export default function ProductPage() {
-    const [state, setState] = useState({reviews:[], modal_active: false, filteredReviews:[]})
+    const [state, setState] = useState({reviews:[], modal_active: false, filteredReviews:[], loading:false})
 
     // Use Effect will simulate my Server request to recieve the needed data and set it to sta
     const getFormattedDate=()=>{
@@ -60,8 +60,8 @@ export default function ProductPage() {
         }
 
     const filterReviewsForRating = (filter) => setState({...state, filteredReviews:[...state.reviews.filter(({rating}) => filter===rating)]})
-        console.log("filtered: ", state.filteredReviews)
-console.log(state)
+
+
     return (
         <>
             {state.modal_active

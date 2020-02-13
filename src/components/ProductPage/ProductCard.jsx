@@ -9,7 +9,8 @@ export default function ProductCard({title, seller, desc, productImg, addReview}
 
             <div className="Content">
                 <h1>{title}</h1>
-                <p>by <h3>{seller}</h3></p>
+                <p>by </p>
+                <h3>{seller}</h3>
                 <p>{desc}</p>
                 <div className="button-container">
                     <button className="add-button">ADD TO CART</button>
