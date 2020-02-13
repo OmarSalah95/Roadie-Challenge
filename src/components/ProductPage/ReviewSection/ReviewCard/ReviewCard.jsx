@@ -9,7 +9,7 @@ export default function ReviewCard({review}){
                     <h3>{review.subject}</h3>
                     <p className="poster-data">by {review.poster} on {review.created_at}</p>
                 </div>
-                <RatingBadge rating={review.rating} />
+                <RatingBadge rating={review.rating}/>
             </div>
             <p>{review.review}</p>
         </div> 

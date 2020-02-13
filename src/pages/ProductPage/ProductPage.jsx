@@ -21,7 +21,7 @@ export default function ProductPage() {
                 {
                     subject: "Roadie",
                     poster:  "Kayla Duperreault",
-                    rating: 2,
+                    rating: 5,
                     review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
                     created_at: formatted,
                 },{
